@@ -18,20 +18,22 @@ if card == "valid_card":
         
      
                 
-    print("choose option => ","balance check ","withdraw cash ", "exit ") 
-
-    option = input()
+    while True:    
+               
+        print("choose option => ","balance check ","withdraw cash ", "exit ") 
+    
+        option = input()
        
 
-    if option == "exit":
+        if option == "exit":
             print("Thank you for using our ATM. Goodbye!")
             exit()
 
-    elif option == "balance check":
-          print(f"Your current balance is ${balance}.")
-          exit()
+        elif option == "balance check":
+          print(f"Your current balance is = ${balance}.")
+          
 
-    elif option == "withdraw cash":
+        elif option == "withdraw cash":
          print("enter the amount you want to withdraw => .")
 
          ammount = int(input())
@@ -43,8 +45,11 @@ if card == "valid_card":
             balance=balance-ammount
             print(f"Your remining balance is ${balance}.") 
              
-    elif option not in ["balance check", "withdraw cash", "exit"]:
-        print("invalid option! please choose a valid option")   
-        
+        else:  print("invalid option! please choose a valid option")   
+        print('press 1 to continue or 0 to exit')    
+        choice = input()
+        if choice == "0":
+            print("Thank you for using our ATM. Goodbye!")
+            exit()
 else:       
     print("Invalid card. Access denied.")
