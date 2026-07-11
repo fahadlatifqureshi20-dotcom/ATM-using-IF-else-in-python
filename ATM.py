@@ -1,26 +1,37 @@
 balance = 5000 
 ammount = 0
+attempts=0
 card = input("Please insert your card: ")
 if card == "valid_card":
-    pin = input("Please enter your PIN: ")
+    while attempts < 3: 
+      pin = input("Please enter your PIN: ")
+      if pin == "1234":
+        break
+      else:
+        attempts += 1
+        print(f"Invalid PIN. {3 - attempts} attempts left.")
+        if attempts == 3:
+            print("Too many incorrect attempts. Access denied.")
+            exit()
     
-    if pin == "1234":
-        print("Access granted. Welcome!")
+    print("Access granted. Welcome!")
+        
+     
+                
+    print("choose option => ","balance check ","withdraw cash ", "exit ") 
 
-        print("choose option => ","balance check ","withdraw cash ", "exit ") 
-
-        option = input()
+    option = input()
        
 
-        if option == "exit":
+    if option == "exit":
             print("Thank you for using our ATM. Goodbye!")
             exit()
 
-        elif option == "balance check":
+    elif option == "balance check":
           print(f"Your current balance is ${balance}.")
           exit()
 
-        elif option == "withdraw cash":
+    elif option == "withdraw cash":
          print("enter the amount you want to withdraw => .")
 
          ammount = int(input())
@@ -32,7 +43,9 @@ if card == "valid_card":
             balance=balance-ammount
             print(f"Your remining balance is ${balance}.") 
              
-        elif option not in ["balance check", "withdraw cash", "exit"]:
-            print("invalid option! please choose a valid option")      
+    elif option not in ["balance check", "withdraw cash", "exit"]:
+        print("invalid option! please choose a valid option")   
     else:
-        print("Invalid PIN. Access denied.")
+        print("Invalid pin. Please choose a valid pin.")         
+else:       
+    print("Invalid card. Access denied.")
