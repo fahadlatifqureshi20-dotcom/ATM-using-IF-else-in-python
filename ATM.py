@@ -45,7 +45,6 @@ if card == "valid_card":
              
     elif option not in ["balance check", "withdraw cash", "exit"]:
         print("invalid option! please choose a valid option")   
-    else:
-        print("Invalid pin. Please choose a valid pin.")         
+        
 else:       
     print("Invalid card. Access denied.")
