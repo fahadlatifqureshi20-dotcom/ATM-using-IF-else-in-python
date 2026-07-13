@@ -15,8 +15,6 @@ if card == "valid_card":
             exit()
     
     print("Access granted. Welcome!")
-        
-     
                 
     while True:    
                
@@ -53,3 +51,4 @@ if card == "valid_card":
             exit()
 else:       
     print("Invalid card. Access denied.")
+
